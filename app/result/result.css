@@ -1,0 +1,118 @@
+#result-search-nav {
+    height: 60px;
+    width: 100%;
+    background: #2d2d2d;
+    position: relative;
+}
+
+#result-search-nav-container {
+    width: 600px;
+    height: 44px;
+    position: absolute;
+    margin-left: 45px;
+    margin-top: 8px;
+}
+
+#result-search-nav-container #search-form {
+    width: 600px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+
+.tt-query,
+.tt-hint,
+#result-search-nav-container #search-form input[type=search]{
+    width: 600px;
+    height: 44px;
+    padding: 0px 12px;
+    font-size: 16pt;
+    border: 1px solid #ccc;
+    outline: none;
+    float: left;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#result-search-nav-container #search-form .tt-dropdown-menu {
+    width: 433px;
+    margin-top: 12px;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+#result-search-nav-container #search-form .tt-suggestion {
+    padding: 3px 20px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+#homepage-container #search-form input[type=search]:hover
+#homepage-container #search-form input[type=search]:focus,
+#homepage-container #search-form input[type=search]:active{
+    border: 1px solid dodgerblue;
+}
+
+#result-search-nav-container #search-form input[type=search]:-ms-input-placeholder {
+    color: #ccc;
+}
+
+#result-search-nav-container #search-form button.icon{
+    display: none;
+}
+
+/*Result container*/
+#result-container {
+    margin: 50px 125px;
+}
+
+#time-used {
+    font-size: 0.9em;
+    color: gray;
+    margin: 2px 2px;
+}
+
+ul#results {
+    list-style:none;
+    padding-left:0;
+}
+
+ul#results .result-title a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: purple;
+}
+
+ul#results .result-title a:hover {
+    text-decoration: underline;
+}
+
+ul#results .result-title {
+    margin: 2px 2px;
+}
+
+ul#results .result-url {
+    font-size: 0.9em;
+    color: darkgreen;
+    margin: 2px 2px;
+}
+
+ul#results .result-page-rank, ul#results .result-score {
+    font-size: 0.9em;
+    margin: 2px 2px;
+}
+
+ul#results .document {
+    margin:20px 2px;
+}
+

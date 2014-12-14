@@ -1,0 +1,22 @@
+<div>
+  <nav id="result-search-nav">
+    <div id="result-search-nav-container">
+      <form id="search-form">
+        <input class="typeahead" type="search" id="homepage-search" placeholder="Search..." />
+        <button ng-click="search()" class="icon"></button>
+      </form>
+    </div>
+  </nav>
+  <section id="result-container">
+    <p id="time-used" ng-show="timeUsed">({{timeUsed}} seconds)</p>
+    <ul id="results" ng-repeat="document in documents">
+      <li class="document">
+        <p class="result-title"><a ng-href="{{document.Url}}">{{document.Title}}</a> (NumView: {{document.NumViews}})</p>
+        <p class="result-url">{{document.Url}}</p>
+        <p class="result-page-rank">Page Rank: {{document.PageRank}}</p>
+        <p class="result-score">Score: {{document.Score}}</p>
+        <p></p>
+      </li>
+    </ul>
+  </section>
+</div>
