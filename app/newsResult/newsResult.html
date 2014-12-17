@@ -18,9 +18,10 @@
   </nav>
   <section id="result-container">
     <p id="time-used" ng-show="timeUsed">({{timeUsed}} seconds)</p>
+    <p id="correctedQuery" ng-show="showCorrectedQuery">Showing results for <span>{{correctedQuery}}</span></p>
     <ul id="results" ng-repeat="document in documents">
       <li class="document">
-        <p class="result-title"><a ng-href="{{document.Url}}">{{document.title}}</a></p>
+        <p class="result-title"><a ng-href="{{document.url}}">{{document.title}}</a></p>
         <span class="result-source">{{document.source}}</span> - <span class="result-pub-date">{{document.pubDate | date:'medium'}}</span>
         <p class="result-page-rank">{{document.description | truncate:true:100:'...'}}</p>
         <!--<p class="result-score">Score: {{document.score}}</p>-->

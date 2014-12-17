@@ -10,6 +10,8 @@ angular.module('myApp.webResult', ['ngRoute'])
     }])
     .controller('WebResultCtrl', ["$scope", "WebResultService", "$routeParams", function ($scope, WebResultService, $routeParams) {
         $scope.search = function() {
+            $scope.showCorrectedQuery = false;
+
             var startTimeStamp = Date.now();
             var query = "";
 
@@ -35,6 +37,12 @@ angular.module('myApp.webResult', ['ngRoute'])
                 .success(function(data, status) {
                     $scope.timeUsed = (Date.now() - startTimeStamp) / 1000;
                     $scope.documents = data.results;
+
+                    if (!data.correctedQuery.isCorrect) {
+                        $scope.correctedQuery = data.correctedQuery.query;
+                        $scope.showCorrectedQuery = true;
+                    }
+
                     console.log(data);
                 })
                 .error(function(data, status) {
@@ -83,6 +91,7 @@ angular.module('myApp.webResult', ['ngRoute'])
                     ranker: "COMPREHENSIVE",
                     numdocs: 20,
                     format: "json"
+                    //checker: "ngram"
                 };
 
                 var config = {

@@ -18,10 +18,11 @@
   </nav>
   <section id="result-container">
     <p id="time-used" ng-show="timeUsed">({{timeUsed}} seconds)</p>
+    <p id="correctedQuery" ng-show="showCorrectedQuery">Showing results for <span>{{correctedQuery}}</span></p>
     <ul id="results" ng-repeat="document in documents">
       <li class="document">
         <p class="result-title"><a
-            ng-href="{{document.Url}}">{{document.title}}</a> (NumView:
+            ng-href="{{document.url}}">{{document.title}}</a> (NumView:
           {{document.numViews}})</p>
 
         <p class="result-url">{{document.url}}</p>

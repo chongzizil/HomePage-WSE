@@ -11,6 +11,8 @@
   </nav>
   <section id="topic">
     <div id="topic-tabs">
+      <button ng-click="showTopTopics()" class="pure-button">Top Topics
+      </button>
       <button ng-click="showNumberDistribution()" class="pure-button">Number
         Distribution
       </button>
@@ -18,13 +20,25 @@
         Distribution
       </button>
     </div>
-    <p>
-      <iframe ng-show="displayNumberDistribution" src="topic/vl/news_column.htm"
+    <div ng-show="displayTopTopics">
+      <div id="top-topics-container">
+        <ul id="top-topics" ng-repeat="topic in topics">
+          <li>
+            <p><b>No.{{$index + 1}}: {{topic.keywords}}</b></p>
+            <ul  id="top-topic-results"  ng-repeat="result in topic.results">
+              <li>{{result.title}}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div ng-show="displayNumberDistribution">
+      <iframe src="topic/vl/news_column.htm"
               width="100%" height="500px" seamless></iframe>
-    </p>
-    <p>
-      <iframe ng-show="displayTimeDistribution" src="topic/vl/news_time.htm"
+    </div>
+    <div ng-show="displayTimeDistribution">
+      <iframe src="topic/vl/news_time.htm"
               width="100%" height="800px" seamless></iframe>
-    </p>
+    </div>
   </section>
 </div>

@@ -1,46 +1,4 @@
-/*Result container...........*/
-/***************************/
-#result-container {
-  margin: 50px 125px;
-}
-
-#time-used {
-  font-size: 0.9em;
-  color: gray;
-  margin: 2px 2px;
-}
-
-ul#results {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul#results .result-title a {
-  text-decoration: none;
-  font-size: 1.2em;
-  color: purple;
-}
-
-ul#results .result-title a:hover {
-  text-decoration: underline;
-}
-
-ul#results .result-title {
-  margin: 2px 2px;
-}
-
-ul#results .result-url {
-  font-size: 0.9em;
-  color: darkgreen;
-  margin: 2px 2px;
-}
-
 ul#results .result-page-rank, ul#results .result-score {
   font-size: 0.9em;
   margin: 2px 2px;
 }
-
-ul#results .document {
-  margin: 20px 2px;
-}
-
