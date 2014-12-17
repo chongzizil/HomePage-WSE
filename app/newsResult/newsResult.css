@@ -29,16 +29,29 @@ ul#results .result-title {
     margin: 2px 2px;
 }
 
-ul#results .result-url {
-    font-size: 0.9em;
-    color: darkgreen;
-    margin: 2px 2px;
+ul#results .result-source {
+    color: #006621;
+    font-size: 13px;
+    font-family: arial,sans-serif;
+    display: inline-block;
 }
 
-ul#results .result-page-rank, ul#results .result-score {
-    font-size: 0.9em;
-    margin: 2px 2px;
+ul#results .result-pub-date {
+    color: #666;
+    font-size: 13px;
+    display: inline-block;
 }
+
+/*ul#results .result-url {*/
+    /*font-size: 0.9em;*/
+    /*color: darkgreen;*/
+    /*margin: 2px 2px;*/
+/*}*/
+
+/*ul#results .result-page-rank, ul#results .result-score {*/
+    /*font-size: 0.9em;*/
+    /*margin: 2px 2px;*/
+/*}*/
 
 ul#results .document {
     margin:20px 2px;

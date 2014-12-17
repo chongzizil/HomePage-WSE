@@ -11,12 +11,30 @@ angular.module('myApp.webResult', ['ngRoute'])
     .controller('WebResultCtrl', ["$scope", "WebResultService", "$routeParams", function ($scope, WebResultService, $routeParams) {
         $scope.search = function() {
             var startTimeStamp = Date.now();
-            var query = $('.typeahead').typeahead('val');
+            var query = "";
+
+            if (!angular.isUndefined($('.typeahead').typeahead('val'))) {
+                query = $('.typeahead').typeahead('val');
+            } else if (!angular.isUndefined($routeParams.query)) {
+                query = $routeParams.query;
+            } else if (!angular.isUndefined($("#result-search-form input[type=search]").val())) {
+                query = $("#result-search-form input[type=search]").val();
+            } else {
+                return;
+            }
+
+            if (query.length == 0) {
+                return;
+            }
+
+            $routeParams.query = query;
+            $scope.query = query;
+            $('.typeahead').typeahead('close');
 
             WebResultService.sendQuery(query)
                 .success(function(data, status) {
                     $scope.timeUsed = (Date.now() - startTimeStamp) / 1000;
-                    $scope.documents = data.Results;
+                    $scope.documents = data.results;
                     console.log(data);
                 })
                 .error(function(data, status) {

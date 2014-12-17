@@ -9,8 +9,7 @@ angular.module('myApp.search', ['ngRoute'])
     }])
     .controller('SearchCtrl', ["$scope", '$location', '$routeParams', '$http', 'SearchService', function ($scope, $location, $routeParams, $http, SearchService) {
       $scope.search = function () {
-        console.log($("#homepage-container input[type=search]").val());
-        $location.url("/result?query=" + $("#homepage-container #search-form input[type=search]").val());
+        $location.url("/result/web?query=" + $('.typeahead').typeahead('val'));
       };
 
       ///*********************** Typeahead ***********************/

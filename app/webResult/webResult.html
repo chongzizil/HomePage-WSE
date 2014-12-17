@@ -11,8 +11,8 @@
   </nav>
   <nav id="tab-nav">
     <div id="tab-list">
-      <div id="selected-tab"><a ng-href="#/result/web">Web</a></div>
-      <div><a ng-href="#/result/news">News</a></div>
+      <div id="selected-tab"><a ng-href="#/result/web?query={{query}}">Web</a></div>
+      <div><a ng-href="#/result/news?query={{query}}">News</a></div>
       <div><a ng-href="#/topic">Topic</a></div>
     </div>
   </nav>
@@ -21,14 +21,14 @@
     <ul id="results" ng-repeat="document in documents">
       <li class="document">
         <p class="result-title"><a
-            ng-href="{{document.Url}}">{{document.Title}}</a> (NumView:
-          {{document.NumViews}})</p>
+            ng-href="{{document.Url}}">{{document.title}}</a> (NumView:
+          {{document.numViews}})</p>
 
-        <p class="result-url">{{document.Url}}</p>
+        <p class="result-url">{{document.url}}</p>
 
-        <p class="result-page-rank">Page Rank: {{document.PageRank}}</p>
+        <p class="result-page-rank">Page Rank: {{document.pageRank}}</p>
 
-        <p class="result-score">Score: {{document.Score}}</p>
+        <p class="result-score">Score: {{document.score}}</p>
 
         <p></p>
       </li>
