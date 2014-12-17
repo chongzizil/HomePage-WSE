@@ -1,0 +1,79 @@
+{
+  "QueryText": "taylor swift",
+  "Results": [
+    {
+      "Title": "American Country Awards - Wikipedia, the free encyclopedia",
+      "Url": "data/wiki/American_Country_Awards",
+      "Score": 27,
+      "PageRank": 0.21851058280080365,
+      "NumViews": 4
+    },
+    {
+      "Title": "Academy of Country Music Awards - Wikipedia, the free encyclopedia",
+      "Url": "data/wiki/Academy_of_Country_Music_Awards",
+      "Score": 19,
+      "PageRank": 0.09883918508382568,
+      "NumViews": 20
+    },
+    {
+      "Title": "American Music Awards of 2009 - Wikipedia, the free encyclopedia",
+      "Url": "data/wiki/American_Music_Awards_of_2009",
+      "Score": 18,
+      "PageRank": 0.9672046443102357,
+      "NumViews": 763
+    },
+    {
+      "Title": "Australian Recording Industry Association - Wikipedia, the free encyclopedia",
+      "Url": "data/wiki/Australian_Recording_Industry_Association",
+      "Score": 14,
+      "PageRank": 0.24447086076128033,
+      "NumViews": 5
+    },
+    {
+      "Title": "Argo (2012 film) - Wikipedia, the free encyclopedia",
+      "Url": "data/wiki/Argo_(2012_film)",
+      "Score": 12,
+      "PageRank": 0.14408297248605026,
+      "NumViews": 25
+    },
+    {
+      "Title": "Adele (singer) - Wikipedia, the free encyclopedia",
+      "Url": "data/wiki/Adele_(singer)",
+      "Score": 7,
+      "PageRank": 0.00000995916741360422,
+      "NumViews": 0
+    },
+    {
+      "Title": "Alanis Morissette - Wikipedia, the free encyclopedia",
+      "Url": "data/wiki/Alanis_Morissette",
+      "Score": 6,
+      "PageRank": 0.00000995916741360422,
+      "NumViews": 0
+    },
+    {
+      "Title": "American Top 40 - Wikipedia, the free encyclopedia",
+      "Url": "data/wiki/American_Top_40",
+      "Score": 6,
+      "PageRank": 0.024307438770813834,
+      "NumViews": 0
+    },
+    {
+      "Title": "Adult Contemporary (chart) - Wikipedia, the free encyclopedia",
+      "Url": "data/wiki/Adult_Contemporary_(chart)",
+      "Score": 5,
+      "PageRank": 0.00000995916741360422,
+      "NumViews": 0
+    },
+    {
+      "Title": "American Civil War - Wikipedia, the free encyclopedia",
+      "Url": "data/wiki/American_Civil_War",
+      "Score": 4,
+      "PageRank": 5.122088904052047,
+      "NumViews": 506
+    }
+  ],
+  "Status": {
+    "StatusCode": 0,
+    "Message": "SUCCESS"
+  }
+}

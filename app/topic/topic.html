@@ -1,0 +1,30 @@
+<div>
+  <nav id="result-search-nav">
+    <p id="nav-logo"><a href="#/">G06</a></p>
+  </nav>
+  <nav id="tab-nav">
+    <div id="tab-list">
+      <div><a ng-href="#/result/web">Web</a></div>
+      <div><a ng-href="#/result/news">News</a></div>
+      <div id="selected-tab"><a ng-href="#/topic">Topic</a></div>
+    </div>
+  </nav>
+  <section id="topic">
+    <div id="topic-tabs">
+      <button ng-click="showNumberDistribution()" class="pure-button">Number
+        Distribution
+      </button>
+      <button ng-click="showTimeDistribution()" class="pure-button">Time
+        Distribution
+      </button>
+    </div>
+    <p>
+      <iframe ng-show="displayNumberDistribution" src="topic/vl/news_column.htm"
+              width="100%" height="500px" seamless></iframe>
+    </p>
+    <p>
+      <iframe ng-show="displayTimeDistribution" src="topic/vl/news_time.htm"
+              width="100%" height="800px" seamless></iframe>
+    </p>
+  </section>
+</div>

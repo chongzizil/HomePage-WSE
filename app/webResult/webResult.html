@@ -1,0 +1,37 @@
+<div>
+  <nav id="result-search-nav">
+    <p id="nav-logo"><a href="#/">G06</a></p>
+
+    <div id="result-search-form-container">
+      <form id="result-search-form">
+        <input class="typeahead" type="search" placeholder="Search..."/>
+        <button type="submit" ng-click="search()"></button>
+      </form>
+    </div>
+  </nav>
+  <nav id="tab-nav">
+    <div id="tab-list">
+      <div id="selected-tab"><a ng-href="#/result/web">Web</a></div>
+      <div><a ng-href="#/result/news">News</a></div>
+      <div><a ng-href="#/topic">Topic</a></div>
+    </div>
+  </nav>
+  <section id="result-container">
+    <p id="time-used" ng-show="timeUsed">({{timeUsed}} seconds)</p>
+    <ul id="results" ng-repeat="document in documents">
+      <li class="document">
+        <p class="result-title"><a
+            ng-href="{{document.Url}}">{{document.Title}}</a> (NumView:
+          {{document.NumViews}})</p>
+
+        <p class="result-url">{{document.Url}}</p>
+
+        <p class="result-page-rank">Page Rank: {{document.PageRank}}</p>
+
+        <p class="result-score">Score: {{document.Score}}</p>
+
+        <p></p>
+      </li>
+    </ul>
+  </section>
+</div>

@@ -1,19 +1,19 @@
 'use strict';
 
-angular.module('myApp.result', ['ngRoute'])
+angular.module('myApp.webResult', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/result', {
-            templateUrl: 'result/result.html',
-            controller: 'ResultCtrl'
+        $routeProvider.when('/result/web', {
+            templateUrl: 'webResult/webResult.html',
+            controller: 'WebResultCtrl'
         });
     }])
-    .controller('ResultCtrl', ["$scope", "ResultService", "$routeParams", function ($scope, ResultService, $routeParams) {
+    .controller('WebResultCtrl', ["$scope", "WebResultService", "$routeParams", function ($scope, WebResultService, $routeParams) {
         $scope.search = function() {
             var startTimeStamp = Date.now();
-            var query = $("#result-search-nav-container #search-form input[type=search]").val();
+            var query = $('.typeahead').typeahead('val');
 
-            ResultService.sendQuery(query)
+            WebResultService.sendQuery(query)
                 .success(function(data, status) {
                     $scope.timeUsed = (Date.now() - startTimeStamp) / 1000;
                     $scope.documents = data.Results;
@@ -24,7 +24,7 @@ angular.module('myApp.result', ['ngRoute'])
                 });
         };
 
-        $("#result-search-nav-container #search-form input[type=search]").val($routeParams.query);
+        $("#result-search-form input[type=search]").val($routeParams.query);
         $scope.search();
 
 
@@ -50,12 +50,12 @@ angular.module('myApp.result', ['ngRoute'])
 
         resultPageSuggestionQueries.initialize();
 
-        $('#result-search-nav-container .typeahead').typeahead(null, {
+        $('#result-search-form .typeahead').typeahead(null, {
             displayKey: 'value',
             source: resultPageSuggestionQueries.ttAdapter()
         });
     }])
-    .factory('ResultService', ["$http", function ($http) {
+    .factory('WebResultService', ["$http", function ($http) {
         return {
             sendQuery: function(query) {
                 var url = "http://localhost:25806/search";

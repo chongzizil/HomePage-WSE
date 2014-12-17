@@ -9,7 +9,7 @@ angular.module('myApp.search', ['ngRoute'])
     }])
     .controller('SearchCtrl', ["$scope", '$location', '$routeParams', '$http', 'SearchService', function ($scope, $location, $routeParams, $http, SearchService) {
       $scope.search = function () {
-        console.log($("#homepage-container #search-form input[type=search]").val());
+        console.log($("#homepage-container input[type=search]").val());
         $location.url("/result?query=" + $("#homepage-container #search-form input[type=search]").val());
       };
 
@@ -21,8 +21,8 @@ angular.module('myApp.search', ['ngRoute'])
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         remote: {
           rateLimitBy: "debounce",
-          rateLimitWait: 400,
-          url: 'http://localhost:25806/prf?query=%QUERY&ranker=comprehensive&numdocs=10&numterms=5&format=json',
+          rateLimitWait: 1000,
+          url: 'http://localhost:25806/prf?query=%QUERY&ranker=CONJUNCTIVE&numdocs=10&numterms=5&format=json',
           filter: function(suggestionQueries) {
             return $.map(suggestionQueries, function(query) {
               return {
@@ -48,6 +48,7 @@ angular.module('myApp.search', ['ngRoute'])
           var queryParams = {
             query: query,
             ranker: "COMPREHENSIVE",
+            //ranker: "CONJUNCTIVE",
             numdocs: 20,
             numterms: 6,
             format: "json"

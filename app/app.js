@@ -4,7 +4,9 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.search',
-  'myApp.result',
+  'myApp.webResult',
+  'myApp.newsResult',
+  'myApp.topic',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
