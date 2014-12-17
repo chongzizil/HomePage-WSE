@@ -219,9 +219,10 @@ p#correctedQuery {
    font-size: 18px;
 }
 
-p#correctedQuery span {
+p#correctedQuery a {
   font-weight: bold;
   font-style: italic;
   color: #105cb6;
   font-size: 18px;
+  text-decoration: none;
 }

@@ -8,7 +8,11 @@ angular.module('myApp.newsResult', ['ngRoute'])
             controller: 'NewsResultCtrl'
         });
     }])
-    .controller('NewsResultCtrl', ["$scope", "NewsResultService", "$routeParams", function ($scope, NewsResultService, $routeParams) {
+    .controller('NewsResultCtrl', ["$scope", "NewsResultService", "$routeParams", "$route", function ($scope, NewsResultService, $routeParams, $route) {
+        $scope.refresh = function() {
+            $route.reload();
+        };
+
         $scope.search = function () {
             $scope.showCorrectedQuery = false;
 

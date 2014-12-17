@@ -8,7 +8,11 @@ angular.module('myApp.webResult', ['ngRoute'])
             controller: 'WebResultCtrl'
         });
     }])
-    .controller('WebResultCtrl', ["$scope", "WebResultService", "$routeParams", function ($scope, WebResultService, $routeParams) {
+    .controller('WebResultCtrl', ["$scope", "WebResultService", "$routeParams", '$route', function ($scope, WebResultService, $routeParams, $route) {
+        $scope.refresh = function() {
+            $route.reload();
+        };
+
         $scope.search = function() {
             $scope.showCorrectedQuery = false;
 
