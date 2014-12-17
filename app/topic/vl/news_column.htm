@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Column Chart For News</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<style type="text/css">
+#container, #sliders {
+	min-width: 310px; 
+	max-width: 800px;
+	margin: 0 auto;
+}
+#container {
+	height: 400px; 
+}
+		</style>
+		<script type="text/javascript">
+$(function () {
+    string = "122, 543, 379, 618, 97, 591, 105, 264, 581, 426, 318, 172, 42, 50, 377, 680, 117, 423, 1208, 942, 241, 364, 95, 65, 723, 330, 739, 541, 638, 224, 130, 658, 182, 265, 125, 238, 563, 535, 176, 108, 426, 423, 167, 1010, 661, 824, 1437, 639, 766, 749, 172, 773, 259, 419, 158, 424, 251, 288, 883, 503, 364, 185, 125, 290, 1091, 394, 442, 368, 160, 514, 185, 747, 537, 1824, 702, 193, 467, 933, 588, 122, 301, 145, 271, 327, 718, 420, 154, 233, 485, 268, 394, 777, 86, 71, 937, 81, 359, 299, 617, 438, 90, 220, 510, 2170, 333, 240, 896, 384, 539, 810, 153, 488, 485, 567, 244, 301, 687, 1240, 798, 291, 326, 169, 590, 364, 335, 278, 1691, 468, 193, 529, 186, 1073, 105, 268, 241, 84, 545, 296, 576, 259, 291, 502, 289, 728, 849, 409, 114, 627, 86, 175, 518, 693, 762, 130, 1275, 531, 196, 318, 625, 390, 101, 487, 419, 512, 982, 460, 770, 595, 346, 1055, 274, 647, 1009, 162, 655, 660, 1137, 440, 287, 423, 483, 144, 156, 244, 477, 145, 932, 1010, 278, 511, 364, 373, 470, 537, 187, 393, 735, 126, 444, 291";
+
+    var array = JSON.parse("[" + string + "]");
+    // Set up the chart
+    var chart = new Highcharts.Chart({
+        chart: {
+            renderTo: 'container',
+            type: 'column',
+            margin: 75,
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 25,
+			height: 720,
+			width: 1280
+            }
+        },
+        title: {
+            text: 'Distribution of Topics Over News'
+        },
+        plotOptions: {
+            column: {
+                depth: 25
+            }
+        },
+        xAxis: {
+            title: {
+                text: 'Topic number'
+            }
+        },
+      
+        yAxis: {
+            title: {
+                text: 'Documents'
+            }
+        },
+        series: [{name:"#Documents",
+            data: array
+		
+		}]
+    });
+
+    function showValues() {
+        $('#R0-value').html(chart.options.chart.options3d.alpha);
+        $('#R1-value').html(chart.options.chart.options3d.beta);
+    }
+
+    // Activate the sliders
+    $('#R0').on('change', function () {
+        chart.options.chart.options3d.alpha = this.value;
+        showValues();
+        chart.redraw(false);
+    });
+    $('#R1').on('change', function () {
+        chart.options.chart.options3d.beta = this.value;
+        showValues();
+        chart.redraw(false);
+    });
+
+    showValues();
+});
+		</script>
+	</head>
+	<body>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container"></div>
+<div id="sliders">
+	<table>
+		<tr><td>Alpha Angle</td><td><input id="R0" type="range" min="0" max="45" value="15"/> <span id="R0-value" class="value"></span></td></tr>
+	    <tr><td>Beta Angle</td><td><input id="R1" type="range" min="0" max="45" value="15"/> <span id="R1-value" class="value"></span></td></tr>
+	</table>
+</div>
+	</body>
+</html>
