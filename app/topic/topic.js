@@ -32,18 +32,18 @@ angular.module('myApp.topic', ['ngRoute'])
       };
 
       TopicService.sendQuery("ignore")
-          .success(function(data, status) {
+          .success(function (data, status) {
             console.log(data);
             $scope.topics = data.results;
           })
-          .error(function(data, status) {
+          .error(function (data, status) {
             console.log("Something is wrong...");
           });
 
     }])
     .factory('TopicService', ["$http", function ($http) {
       return {
-        sendQuery: function(query) {
+        sendQuery: function (query) {
           var url = "http://localhost:25806/search/topics";
 
           var queryParams = {

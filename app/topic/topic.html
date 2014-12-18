@@ -24,9 +24,9 @@
       <div id="top-topics-container">
         <ul id="top-topics" ng-repeat="topic in topics">
           <li>
-            <p><b>No.{{$index + 1}}: {{topic.keywords}}</b></p>
+            <p><b>No.{{$index + 1}}: {{topic.keywords | uppercase}}</b></p>
             <ul  id="top-topic-results"  ng-repeat="result in topic.results">
-              <li>{{result.title}}</li>
+              <li><p class="result-title"><a ng-href="{{result.url}}">{{result.title}}</a></p></li>
             </ul>
           </li>
         </ul>

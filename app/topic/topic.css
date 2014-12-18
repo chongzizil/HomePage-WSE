@@ -12,3 +12,12 @@
 #top-topics-container {
   margin: 10px 125px;
 }
+
+#top-topic-results a {
+  color: #000000;
+  text-decoration: none;
+}
+
+#top-topic-results a:hover {
+  text-decoration: underline;
+}
